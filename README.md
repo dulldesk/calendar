@@ -12,7 +12,7 @@ A 12-month calendar.
 
 ## Installation
 
-1. Download the reponsitory.
-2. Rename the root folder (calendar-master) to `calendar`
-3. Install Processing at https://processing.org/download/
+1. Install Processing at https://processing.org/download/
+2. Download the reponsitory
+3. Rename the root folder (calendar-master) to `calendar`
 4. Run the file via the Processing application.
