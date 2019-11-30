@@ -6,11 +6,12 @@ int [][] week = new int[12][7]; // first week of each month
 int mI=0; // month index
 
 // changes by year
-final int firstDay = 3; // wedn, jan 1 2020 ; day index
+final int firstDay = first(); 
 
 void setup() {
   frameRate(24);
   size(640, 1136); 
+  surface.setResizable(true); // to change size: surface.setSize(w,h);
   for (int i=0; i<12; i++) {
     for (int j=0; j<7; j++) week[i][j]=0;
   }
