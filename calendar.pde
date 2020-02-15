@@ -1,32 +1,20 @@
-final String [] days = {"S", "M", "T", "W", "T", "F", "S"};
-final String [] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-final int [] dayNos = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-final color bkgd = color(32, 27, 171);
-int [][] week = new int[12][7]; // first week of each month
-int mI=0; // month index
-
-// changes by year
-final int firstDay = first(); 
-
 void setup() {
   frameRate(24);
   size(640, 1136); 
-  surface.setResizable(true); // to change size: surface.setSize(w,h);
-  for (int i=0; i<12; i++) {
-    for (int j=0; j<7; j++) week[i][j]=0;
+  
+  //surface.setResizable(true); // to change size: surface.setSize(w,h);
+  
+  try {    
+    year = Integer.parseInt(loadStrings("year.txt")[0]);
+  } catch (Exception e) {
+    year = (Calendar.getInstance()).get(Calendar.YEAR);
   }
+  // leap year
+  if (year%4==0) dayNos[1]=29;
+  
+  firstDay = first(); 
+  
   init();
-}
-void init() {
-  // dayIn day index
-  for (int m=0, dayInd=firstDay; m<12; m++) {
-    int date=1;
-    for (int i=dayInd; i<7; i++)
-      week[m][i] = date++;
-    dayInd=0;
-    for (; date<=dayNos[m]; date++) 
-      if (++dayInd>=7) dayInd=0;
-  }
 }
 
 void draw() {

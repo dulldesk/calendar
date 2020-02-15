@@ -6,7 +6,7 @@ void saveButtons() {
     final int x=width-220, y=50, w=185, h=55;
     stroke(255);
     strokeWeight(3);
-    fill(#4B96FA);
+    fill(bkgd);
     boolean saveBtn = button(x, y, w, h, false);
     boolean saveAllBtn = button(x, y*2+25, w, h, false);
     if (saveBtn && frameCount > 5) { //"Save" 
@@ -30,7 +30,7 @@ void saveButtons() {
 }
 
 void saveImgs() {
-  save((saveAll ? (mI+1)+" " : "")+months[mI]+".jpg");
+  save(year+"/"+(saveAll ? (mI+1)+" " : "")+months[mI]+".jpg");
   showButtons = false; // safeguard;
   if (--saveCnt>=1) mI++;
   else {
