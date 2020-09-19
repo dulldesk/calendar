@@ -1,0 +1,9 @@
+# dimensions must be specified in pixels
+width=640
+height=1136
+
+# year to be displayed
+year=2021
+
+# background color, in RGB (comma-delimited)
+bkgd=32,27,140

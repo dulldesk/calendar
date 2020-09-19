@@ -1,7 +1,16 @@
-final int leftMar = 90; // left margin
-final int grInt = 500; // grand interval (space btwn no. * 7)
-final int yInt = 67; // interval btwn wks
+int leftMar; // left margin
+int grInt;   // grand interval (space btwn no. * 7)
+int yInt;    // interval btwn wks
+
+void initDisplayVars() {
+  leftMar = (int)Math.floor(width*0.15); 
+  grInt = (int)Math.floor(width*0.78); 
+  yInt = (int)Math.ceil(height*0.06); 
+}
+
 void display() {
+  initDisplayVars();
+  
   fill(255);
   // month title 
   textAlign(CENTER);
