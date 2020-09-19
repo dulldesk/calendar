@@ -60,24 +60,26 @@ void loadBkgdColour(String pref) {
 }
 
 void loadConfig() {
-  String [] config = loadStrings("config.txt");
-  
   // load defaults
   loadYear("");
   loadWidth("");
   loadHeight("");
   loadBkgdColour("");
   
-  for (String pref : config) {
-   pref = pref.trim().toLowerCase();
-   if (pref.startsWith(";") || pref.startsWith("#") || pref.length() == 0) continue;
-   
-   String [] tokens = pref.split("\\s*[=:]\\s*");
-   if (tokens[0].equals("year")) loadYear(tokens[1]);
-   else if (tokens[0].equals("width")) loadWidth(tokens[1]);
-   else if (tokens[0].equals("height")) loadHeight(tokens[1]);
-   else if (tokens[0].equals("bkgd")) loadBkgdColour(tokens[1]);
-  }
+  try {
+    String [] config = loadStrings("config.txt");
+  
+    for (String pref : config) {
+     pref = pref.trim().toLowerCase();
+     if (pref.startsWith(";") || pref.startsWith("#") || pref.length() == 0) continue;
+     
+     String [] tokens = pref.split("\\s*[=:]\\s*");
+     if (tokens[0].equals("year")) loadYear(tokens[1]);
+     else if (tokens[0].equals("width")) loadWidth(tokens[1]);
+     else if (tokens[0].equals("height")) loadHeight(tokens[1]);
+     else if (tokens[0].equals("bkgd")) loadBkgdColour(tokens[1]);
+    }
+  } catch (Exception e) {}
 }
 
 

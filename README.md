@@ -11,10 +11,6 @@ A 12-month calendar.
   * Advacing to the next month after December loops back to January and vice versa
 * Press any other key to advance to the next month (or loops back to January in the case of December)
 * Press `esc` to exit the program
-* Edit the config file (`/data/config.txt`) to:
-  * Change the year displayed
-  * Change the background colour
-  * Change the width and the height of the image (can also be adjusted by directly changing the window size)
 
 ## Installation and Usage
 
@@ -22,3 +18,27 @@ A 12-month calendar.
 2. Download the repository
 3. Rename the root folder (calendar-master) to `calendar`
 4. Open `calendar.pde` in the Processing application and press the round Play button. 
+
+## Configuration
+A `config.txt` can be added under `data/` to configure some features of the program, namely:
+
+#### Year
+Change the year displayed
+```
+year=2001
+```
+
+#### Background Colour
+Change the background colour
+```
+bkgd=0,0,0
+```
+
+#### Width / height
+Change the window dimensions, in pixels (can also be done by directly adjusting the window size)
+```
+width=700
+height=1334
+```
+
+A sample config file is present in the directory.
