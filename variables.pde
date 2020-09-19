@@ -6,5 +6,5 @@ color bkgd;
 int [][] week = new int[12][7]; // first week of each month
 int mI=0; // month index
 int year;
-int firstDay; // first day of the year
+int firstDay; // first day of the year 
 final int frameCountIntv = 10;

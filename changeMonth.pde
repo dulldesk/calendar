@@ -1,7 +1,8 @@
 char [] allowedKeys = {'A','D','W','S','H','J','K','L'};
 
 void changeMonth() {
-  if (keyCode == LEFT) mI--;
+  if (keyCode == LEFT || keyCode == UP) mI--;
+  else if (keyCode == RIGHT || keyCode == DOWN) mI++;
   else if (key >= '1' && key < '1'+12) {
     mI = key - '1';
   }
